@@ -1,0 +1,52 @@
+# --- Python & Virtual Environments ---
+# Ignora o ambiente virtual (criado por 'venv' ou 'uv')
+.venv/
+venv/
+env/
+*.local
+
+# Ignora caches do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Django ---
+# Ignora bancos de dados SQLite locais (boa prática, mesmo usando Postgres)
+*.sqlite3
+db.sqlite3
+
+# Ignora a pasta de estáticos coletados (gerada pelo 'collectstatic')
+staticfiles/
+
+# Ignora arquivos de upload de usuário (se você tiver)
+media/
+
+# --- Segredos (MUITO IMPORTANTE) ---
+# Nunca envie seus segredos (senhas de banco, API keys) para o repositório
+.env
+.env.*
+*.env
+
+# --- Pacotes ---
+# Ignora metadados de instalação do 'uv' ou 'pip'
+pip-wheel-metadata/
+*.egg-info/
+
+# --- IDEs e Editores ---
+# VS Code
+.vscode/
+# PyCharm
+.idea/
+
+# --- Sistema Operacional ---
+# macOS
+.DS_Store
+# Windows
+Thumbs.db
+
+# --- Logs e Relatórios ---
+logs/
+*.log
+.coverage
+htmlcov/

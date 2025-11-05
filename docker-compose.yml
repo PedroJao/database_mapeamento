@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: sas_foco_db
+    environment:
+      # As senhas devem ser as mesmas do .env
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432" # Exponha localmente para debug (opcional)
+
+  app:
+    build: .
+    container_name: sas_foco_app
+    ports:
+      - "8010:8010"
+    depends_on:
+      - db
+    env_file:
+      - .env # Carrega as variáveis de ambiente
+
+volumes:
+  postgres_data:
