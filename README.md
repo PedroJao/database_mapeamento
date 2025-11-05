@@ -1,11 +1,11 @@
+Passo a passo 
+
 cd mapeamento_sas_foco
 
-# Configs do Banco de Dados
 POSTGRES_DB=sas_foco_db
 POSTGRES_USER=admin
 POSTGRES_PASSWORD=admin
 
-# Configs do Django (para conectar no DB)
 DB_HOST=db
 DB_PORT=5432
 
